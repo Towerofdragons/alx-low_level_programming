@@ -6,6 +6,7 @@
 /**
  * main - prints if number generated is negative, positive or just zero
  *
+ * Return: 0 success
  */
 int main(void)
 {
