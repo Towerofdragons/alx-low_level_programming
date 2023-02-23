@@ -8,25 +8,27 @@
  *
  * Return: 0 success
  */
-int positive_or_negative(int i)
+
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * * main - prints the largest of 3 integers
+ * * Return: 0
+ * */
+
+int main(void)
 {
-	int n;
+	        int a, b, c;
+		        int largest;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	if (n > 0)
-	{
-		printf("%d is positive\n", n);
-	}
-	else if (n < 0)
-	{
-		printf("%d is negative\n", n);
-	}
-	else
-	{
-		printf("%d is zero\n", n);
-	}
+			        a = 972;
+				        b = -98;
+					        c = 0;
 
-	return (0);
+						        largest = largest_number(a, b, c);
+
+							        printf("%d is the largest number\n", largest);
+
+								        return (0);
 }
