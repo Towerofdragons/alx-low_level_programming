@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * swap - swaps integers with their pointers
+ * swap_int - swaps integers with their pointers
  * @a: pointer to be switched
  * @b: another pointer for switching
  *
  * Return: void
  */
 
-void swap_int(int *a ,int *b)
+void swap_int(int *a, int *b)
 {
 	int buffer;
 
