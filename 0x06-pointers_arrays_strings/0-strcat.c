@@ -14,20 +14,18 @@ char *_strcat(char *dest, char *src)
 
 	while (dest[i])
 	{/*finds length of dest string up to terminator*/
+		printf("%c\n",dest[i]);
 		i++;
 	}
 
-	i++; /*moves selector over dest terminator*/
-	
+	/*i++; moves selector over dest terminator*/
+
 	int j = 0;
 
 	while (1)
 	{
-		/*printf("\nWriting loop : %c\n",src[j]);*/
 		if (src[j] == '\0')
 		{/*Add terminating character from j*/
-
-			/*printf("\nWriting loop terminated\n");*/
 
 			dest[i] = src[j];
 			break;
@@ -37,6 +35,7 @@ char *_strcat(char *dest, char *src)
 		j++;
 		i++;
 	}
-	/*printf("\n result : %s\n",dest);*/
+
+	printf("\nResult:%s\n",dest);
 	return (dest);
 }
