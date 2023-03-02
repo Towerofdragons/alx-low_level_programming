@@ -5,7 +5,7 @@
  * @src: appends to...
  * @dest: string for attatchment
  *
- * Return: concatenated string 
+ * Return: concatenated string
  */
 
 char *_strcat(char *dest, char *src)
@@ -13,23 +13,24 @@ char *_strcat(char *dest, char *src)
 	int i;
 	int j;
 
-        i = 0;
+	i = 0;
 
 	while (dest[i])
-	{/*finds length of dest string up to terminator*/
-		/*if (dest[i] == ' ')
-		{
-			printf("_");
-
-		}
-		else
-		{
-			printf("%c",dest[i]);
-		}*/
+	{/*
+	*finds length of dest string up to terminator/
+	*	if (dest[i] == ' ')
+	*	{
+	*		printf("_");
+	*
+	*	}
+	*	else
+	*	{
+	*		printf("%c",dest[i]);
+	*	}
+	*/
 		i++;
 	}
 
-	/*i++; moves selector over dest terminator*/
 
 	j = 0;
 
@@ -47,6 +48,5 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 
-	/*printf("\nResult:%s\n",dest);*/
 	return (dest);
 }
