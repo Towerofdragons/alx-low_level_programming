@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _strcat - concatenates two strings
  * @src: appends to...
@@ -14,7 +13,6 @@ char *_strcat(char *dest, char *src)
 
 	while (dest[i])
 	{/*finds length of dest string up to terminator*/
-		printf("%c\n",dest[i]);
 		i++;
 	}
 
@@ -36,6 +34,5 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 
-	printf("\nResult:%s\n",dest);
 	return (dest);
 }
