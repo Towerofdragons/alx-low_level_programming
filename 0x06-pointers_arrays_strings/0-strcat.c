@@ -10,7 +10,10 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i = 0;
+	int i;
+	int j;
+
+        i = 0;
 
 	while (dest[i])
 	{/*finds length of dest string up to terminator*/
@@ -28,7 +31,7 @@ char *_strcat(char *dest, char *src)
 
 	/*i++; moves selector over dest terminator*/
 
-	int j = 0;
+	j = 0;
 
 	while (1)
 	{
