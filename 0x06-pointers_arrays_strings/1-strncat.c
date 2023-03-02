@@ -32,7 +32,7 @@ char *_strncat(char *dest, char *src, int n)
 
 		if (src[j] == '\0' || j + 1 == n)
 		{
-			if (j + 1 == n && src[j] == '\0')
+			if (j + 1 >= n && src[j] == '\0')
 			{
 				break;
 			}
