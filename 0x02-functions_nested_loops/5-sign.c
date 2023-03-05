@@ -10,19 +10,21 @@
  */
 int print_sign(int n)
 {
+	int sign;
+
 	if (n == 0)
 	{
-		return (0);
+		sign = 0;
 	}
 
 	if (n > 0)
 	{
-		return (1);
+		sign = 1;
 	}
 	if (n < 0)
 	{
-		return (-1);
+		sign = -1;
 	}
 
-	return (0);
+	return (sign);
 }
