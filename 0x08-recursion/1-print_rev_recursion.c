@@ -2,7 +2,7 @@
 
 /**
  * _print_rev_recursion - prints string in reverse
- * @s - string
+ * @s: string
  *
  * Return: nothing
  */
@@ -18,17 +18,18 @@ void _print_rev_recursion(char *s)
 /**
  * recur_back - recursive function for printing
  * @s: string
- * @i: index 
+ * @i: index
  *
  * Return: nothing
  */
 
 void recur_back(char *s, int i)
 {
-	if (s[i] != '\0')
+	if (s[i] == '\0')
 	{
-		recur_back(s, i + 1);
+		return;
 	}
 
+	recur_back(s, i + 1);
 	_putchar(s[i]);
 }
