@@ -9,5 +9,6 @@ void recur_back(char *s, int i);
 int _strlen_recursion(char *s);
 int recur_count(char *s, int i);
 int factorial(int n);
+int _pow_recursion(int x, int y);
 
 #endif
