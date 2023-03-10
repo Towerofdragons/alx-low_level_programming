@@ -1,9 +1,11 @@
 #include <stdio.h>
 
-/** main - print name of function
+/**
+ * main - print name of function
+ * @argc: arguement count
  * @argv: array of provided arguements
  *
- * Return: 0 
+ * Return: 0
  */
 int main(__attribute__((unused)) int argc, char *argv[])
 {
