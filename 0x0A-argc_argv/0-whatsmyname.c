@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 /** main - print name of function
- * @argc: arguement count
  * @argv: array of provided arguements
  *
  * Return: 0 
