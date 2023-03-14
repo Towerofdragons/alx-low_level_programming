@@ -61,7 +61,7 @@ int **alloc_grid(int width, int height)
 
 void free_grid(int **grid, int failure_index)
 {
-	while (failure_index > 0)
+	while (failure_index >= 0)
 	{
 		free(grid[failure_index]);
 		failure_index--;
