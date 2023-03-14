@@ -28,7 +28,7 @@ int **alloc_grid(int width, int height)
 
 		if (grid[i] == NULL)
 		{
-			free_grid(grid, i);
+			free_grid_fail(grid, i);
 			return (NULL);
 		}
 		i++;
@@ -52,14 +52,14 @@ int **alloc_grid(int width, int height)
 }
 
 /**
- * free_grid - frees grid from failing row
+ * free_grid_fail - frees grid from failing row
  * @grid: the grid
  * @failure_index: failing row to back track from
  *
  * Return: nothing
  */
 
-void free_grid(int **grid, int failure_index)
+void free_grid_fail(int **grid, int failure_index)
 {
 	while (failure_index >= 0)
 	{
