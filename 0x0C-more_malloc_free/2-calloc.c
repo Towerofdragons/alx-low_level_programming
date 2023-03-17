@@ -17,6 +17,7 @@ void format(char *array, int length)
 	while (i < length)
 	{
 		array[i] = 0;
+		i++;
 	}
 
 }
@@ -24,7 +25,7 @@ void format(char *array, int length)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *array;
-	int space;
+	unsigned int space;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
