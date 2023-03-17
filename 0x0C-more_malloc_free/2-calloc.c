@@ -8,6 +8,19 @@
  *
  * Return: pointer to array
  */
+void format(char *array, int length)
+{
+	int i;
+
+	i = 0;
+
+	while (i < length)
+	{
+		array[i] = '0';
+	}
+
+}
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *array;
@@ -21,5 +34,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (array == NULL)
 		return (NULL);
+	format(array, space);
 	return (array);
 }
