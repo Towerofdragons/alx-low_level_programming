@@ -16,7 +16,7 @@ void format(char *array, int length)
 
 	while (i < length)
 	{
-		array[i] = '0';
+		array[i] = 0;
 	}
 
 }
