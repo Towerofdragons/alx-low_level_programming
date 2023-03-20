@@ -10,5 +10,7 @@ int _strlen_recursion(char *s);
 int recur_count(char *s, int i);
 int factorial(int n);
 int _pow_recursion(int x, int y);
+int recur_prime(int n, int i);
+int is_prime_number(int n);
 
 #endif
