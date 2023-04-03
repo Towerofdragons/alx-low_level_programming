@@ -20,7 +20,10 @@ typedef struct list_s
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <string.h>
+
 size_t print_list(const list_t *h);
+list_t *add_node(list_t **head,const char *str);
 
 
 #endif
