@@ -5,6 +5,7 @@
  * @h: pointer to first node
  *
  * Return: number of elements
+ */
 size_t print_list(const list_t *h)
 {
 	int count;
