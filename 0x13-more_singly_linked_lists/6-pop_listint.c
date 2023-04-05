@@ -1,6 +1,6 @@
 #include "lists.h"
 
-/** 
+/**
  * pop_listint - remove first node from list
  * @head: pointer to pointer variable holding head
  *
@@ -14,7 +14,7 @@ int pop_listint(listint_t **head)
 	if (*head == NULL)
 		return (0);
 
-        temp = (*head)->next;
+	temp = (*head)->next;
 	value = (*head)->n;
 	free(*head);
 	*head = temp;
