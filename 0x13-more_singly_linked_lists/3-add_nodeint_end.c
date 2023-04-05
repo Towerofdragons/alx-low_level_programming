@@ -16,10 +16,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	if (head == NULL)
 		return (NULL);
 
-	temp = malloc(sizeof(listint_t));
-
-	if (temp == NULL)
-		return (NULL);
 
 	if (*head == NULL)
 	{
