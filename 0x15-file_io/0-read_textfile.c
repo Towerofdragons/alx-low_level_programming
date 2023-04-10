@@ -10,8 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	size_t i;
-	size_t bytes_read;
+	ssize_t bytes_read, bytes_written;
 	char *text;
 	
 	if (filename == NULL)
@@ -29,16 +28,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	bytes_read = read(fd, text, letters);
-	i = 0;
 
+	if (bytes_read == -1)
+		return (0);
 
-	while (i < letters)
-	{
-		_putchar(text[i]);
-		i++;
-	}
+	bytes_written = write(STDOUT_FILENO, text, letters);
 
+	if (bytes_written == -1)
+		return (0);
 
 	close (fd);
-	return ((ssize_t) bytes_read);
+	return ((ssize_t) bytes_written);
 }
