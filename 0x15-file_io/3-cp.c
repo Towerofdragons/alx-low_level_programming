@@ -70,5 +70,5 @@ void copy(char *file_from, char *file_to)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_fd);
 		exit(100);
-	}}
+	}
 }
