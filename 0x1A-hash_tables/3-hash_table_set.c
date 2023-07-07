@@ -80,8 +80,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 					curr -> value = new_value;
 					return (1);
 				}
-				free(new_key);
-				free(new_node);
 			}
 			curr = curr -> next;
 		}
