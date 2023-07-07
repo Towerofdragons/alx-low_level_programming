@@ -70,13 +70,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				if (strcmp(curr -> value, value) == 0)
 				{
-					return (0);
+					free(new_value);
+					free(new_key);
+					free(new_node);
+					return (1);
 				}
 				else
 				{
 					curr -> value = new_value;
 					return (1);
 				}
+				free(new_key);
 				free(new_node);
 			}
 			curr = curr -> next;
