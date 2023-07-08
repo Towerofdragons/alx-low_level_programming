@@ -13,6 +13,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
+	hash_node_t *curr;
 	hash_node_t *new_node;
 
 	if (ht == NULL)
@@ -43,6 +44,30 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  		printf("%s\n", ht -> array[index] -> value);
 #endif
 		return(1);
+	}
+	else
+	{
+		curr = ht -> array[index];
+		while (curr != NULL)
+		{
+			if (strcmp(key, curr -> key) == 0)
+			{
+#if DEBUG
+				printf("Similar found for '%s' :: UPDATING\n", key);
+#endif
+				curr -> value = (char *) value;
+				return (1);
+
+			}
+			curr = curr -> next;
+		}
+#if DEBUG
+		printf("NONE found for '%s' :: Attatching new node\n", key);
+#endif
+
+		new_node = create_node((char *)key, (char *)value);
+		new_node -> next = ht -> array[index];
+		ht -> array[index] = new_node;
 	}
 
 	return(1);

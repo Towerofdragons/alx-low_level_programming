@@ -30,7 +30,7 @@ typedef struct hash_table_s
      hash_node_t **array;
 } hash_table_t;
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include <stdio.h>
 #include <stdlib.h>
