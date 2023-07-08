@@ -59,7 +59,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 #if DEBUG
 				printf("Similar found for '%s' :: UPDATING\n", key);
 #endif
-				curr -> value = (char *) value;
+				curr -> value = strdup(value);
 				return (1);
 
 			}
@@ -82,8 +82,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *create_node(char *key, char *value)
 {
 	hash_node_t *new;
-	char *new_key;
-	char *new_value;
 
 	new = malloc(sizeof(hash_node_t));
 	
@@ -92,26 +90,9 @@ hash_node_t *create_node(char *key, char *value)
 		return(NULL);
 	}
 
-	new_key = malloc(sizeof(char) * (strlen(key) + 1));
-	if (new_key == NULL)
-	{
-		free(new);
-		return(NULL);
-	}
 
-	new_value = malloc(sizeof(char) * (strlen(value) + 1));
-        if (new_value == NULL)
-        {
-                free(new);
-		free(new_key);
-                return(NULL);
-        }
-
-	strcpy(new_key, key);
-	strcpy(new_value, value);
-
-	new -> key = new_key;
-	new -> value = new_value;
+	new -> key = strdup(key);
+	new -> value = strdup(value);
 	new -> next = NULL;
 	return(new);
 
