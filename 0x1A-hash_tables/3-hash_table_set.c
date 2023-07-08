@@ -28,14 +28,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	
 	index = key_index((const unsigned char *)key, ht -> size);
+	printf("%lu:: INDEXING AT\n", index);
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 	{
 		return (0);
 	}
-	new_value =  malloc(sizeof(char) * strlen(value));
-	new_key = malloc(sizeof(char) * strlen(key));
+
+	new_value =  malloc(sizeof(char) * (strlen(value) + 1));
+	new_key = malloc(sizeof(char) * (strlen(key) + 1));
 	
 	if (new_value == NULL)
 	{
@@ -51,15 +53,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	strcpy(new_value, value);
-
 	strcpy(new_key, key);
-	new_node -> key = new_key;
+
+	new_node -> key = new_key;  
 	new_node -> value = new_value;
 
 	if (ht -> array[index] == NULL)
 	{
 		new_node -> next =  NULL;
 		ht -> array[index] = new_node;
+		return(1);
 	}
 	else
 	{
@@ -87,6 +90,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new_node -> next = ht -> array[index];
 		ht -> array[index] = new_node;
 	}
+
+	printf("Value Set\n");
 
 	return (1);
 
