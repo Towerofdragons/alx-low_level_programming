@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	if (key == NULL || strlen(key) == 0)
+	if (key == NULL || strlen(key) == 0 || value == NULL)
 	{
 		return (0);
 	}
@@ -29,7 +29,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	printf("%lu, %s\n", ht -> size, value);
 #endif
 	index = key_index((const unsigned char *)key, ht -> size);
-	index--;
 #if DEBUG
 	printf("Using index: %lu\n", index);
 #endif
@@ -59,7 +58,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 #if DEBUG
 				printf("Similar found for '%s' :: UPDATING\n", key);
 #endif
-				curr -> value = strdup(value);
+				strcpy(curr -> value, value);/*TODO*/
+				/*curr -> value = strdup(value);*/
+#if DEBUG
+				printf("UPDATED...");
+#endif
 				return (1);
 
 			}
