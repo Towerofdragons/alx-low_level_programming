@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	printf("%lu, %s\n", ht -> size, value);
 #endif
 	index = key_index((const unsigned char *)key, ht -> size);
-
+	index--;
 #if DEBUG
 	printf("Using index: %lu\n", index);
 #endif
