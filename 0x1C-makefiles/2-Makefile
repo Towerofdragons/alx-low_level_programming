@@ -4,7 +4,7 @@ SRC = main.c school.c
 OBJ = $(subst .c,.o,$(SRC))
 
 all : $(OBJ)
-	$(CC) $(OBJ) -o school
+	$(CC) $(OBJ) -o $(NAME)
 
 main.o : main.c
 	$(CC) main.c -c
