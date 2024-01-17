@@ -19,21 +19,22 @@ int binary_search(int *array, size_t size, int value)
 	int M;
 	int i;
 
-	if (!array)
+	if (array == NULL)
 		return (-1);
 	L = 0;
 	R = size - 1;
 
 	while (L <= R)
 	{
-		printf("Searching in array: ");
+		printf("Searching in array:");
 		for (i = L; i <= R; i++)
 		{
-			printf("{%d}", array[i]);
+			printf(" %d", array[i]);
 			if (i != R)
 				printf(",");
 		}
 		printf("\n");
+
 		M = floor((L + R) / 2);
 
 		if (array[M] == value)
